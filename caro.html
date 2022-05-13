@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="text"></p>
+    <br>
+    <input type="button" id="click" value="Change value" onclick="changeValue()">
+
+    <script>
+        let text = '';
+        let enter = '</br>'
+        let arr = [];
+        space="&nbsp;&nbsp;&nbsp;&nbsp;"
+
+        for (let i = 0; i < 5; i++) {
+            arr[i] = [0, 0, 0, 0, 0];
+        }
+        for (let i = 0; i < 5; i++) {
+            text += enter;
+            for (let j = 0; j < 5; j++) {
+                text += arr[i][j] +space;
+            }
+        }
+        document.getElementById('text').innerHTML = text;
+
+        function changeValue() {
+            let x = prompt("nhập tọa độ X");
+            let y = prompt("nhập tọa độ Y");
+            arr[x][y] = "X";
+            text = '';
+
+            for (let i = 0; i < 5; i++) {
+                text += enter;
+                for (let j = 0; j <5; j++) {
+                    text+=arr[i][j]+space;
+                }
+            }
+
+            document.getElementById('text').innerHTML ='</hr>'+ text;
+        }
+
+    </script>
+</body>
+
+</html>
